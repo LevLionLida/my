@@ -11,14 +11,14 @@ require_once __DIR__ . '/../functions/auth.php';
 
 if ('POST' !== $_SERVER['REQUEST_METHOD']) {
     set_alert('error', 'Method not allowed!');
-    header('Location: ../auth_page.php');
+    header('Location: ../pages/auth_page.php');
     exit;
 }
 // 2. Проверить данные
 
 if (!isset($_POST['email']) || !isset($_POST['password'])) {
     set_alert('error', 'E-mail and password are required!');
-    header('Location: ./../auth_page.php');
+    header('Location: ../pages/auth_page.php');
     exit;
 }
 
@@ -38,8 +38,8 @@ $select_id = user_select_id($email); // выборка с из базы ид п�
 if ($user_is_auth == true) {
     $_SESSION['email'] = $email;
    $_SESSION['user_id'] = $select_id;
-    setcookie("auth", $user_auth, time() + 100*100, "/");
-
+    setcookie("auth", $user_auth, time() + 100*100*23, "/");
+    setcookie("user_id", $select_id, time() + 100*100*23, "/");
 }
 
 

@@ -23,7 +23,7 @@ function user_auth(PDO $database, string $email, string $password): bool
         $user_auth = false;
         $_SESSION['auth'] = $user_auth;
         set_alert('error', 'Неправильный логин или пароль!');
-        header('Location: /home-work/22-21/auth_page.php');
+        header('Location: ../pages/auth_page.php');
     }
     return $user_auth;
 

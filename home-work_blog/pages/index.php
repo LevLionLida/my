@@ -1,7 +1,7 @@
 <?php session_start();
 
-require_once __DIR__ . './../functions/post.php';
-require_once __DIR__ . './../functions/template.php';
+
+//require_once __DIR__ . './../functions/template.php';
 require_once __DIR__ . './../functions/posts_function.php';//подключаем функцию выборки постов
 
 $posts_view = post_view();
@@ -17,10 +17,12 @@ $posts_view = post_view();
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
     <title>Blog </title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/blog/">
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+    <link href="../style/blog.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+
+    <link href="../style/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../style/css.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -75,17 +77,12 @@ $posts_view = post_view();
         }
     </style>
 
-
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="../style/blog.css" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
-    <?php require_once __DIR__ . './../templates/header.php'; ?>
 
+    <?php require_once __DIR__ . './../templates/header.php'; ?>
 
     <main class="container">
         <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
@@ -99,62 +96,57 @@ $posts_view = post_view();
         </div>
     </main>
 
-    <main class="container">
+    <div class="container">
 
         <div class="row mb-2">
-            <?php require_once __DIR__ . './../templates/filter.php' ?>
-        </div>
-        <div class="row mb-2">
-            <?php //$i = 1;
-            foreach ($posts_view
+            <?php //require_once __DIR__ . './../templates/filter.php' ?>
 
-            as $post) :
-            // print_r($post);
-            ?>
+            <div class="row mb-2">
+                <?php //$i = 1;
+                foreach ($posts_view
 
-            <div class="col-md-6">
+                as $post) :
+                // print_r($post);
+                ?>
 
+                <div class="col-md-6">
 
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-success"><?= $post['type'] ?></strong>
-                        <h3 class="mb-0"><?= $post['name_post'] ?></h3>
-                        <div class="mb-1 text-muted"><?= $post['time'] ?></div>
-                        <p class="mb-auto"> <?php //echo substr($post['text_post'],-100);
-                            echo mb_substr($post['text_post'], 0, 78) .' ...';
-                            ?></p>
-                        <a href="#" class="stretched-link">Continue reading</a>
-                    </div>
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success"><?= $post['type'] ?></strong>
+                            <h3 class="mb-0"><?= $post['name_post'] ?></h3>
+                            <div class="mb-1 text-muted"><?= $post['time'] ?></div>
+                            <p class="mb-auto"> <?php //echo substr($post['text_post'],-100);
+                                echo mb_substr($post['text_post'], 0, 78) . ' ...';
+                                ?></p>
+                            <a href="#" class="stretched-link">Continue reading</a>
+                        </div>
 
-                    <div class="col-auto d-none d-lg-block">
-                        <?php $file = "./../storage/" . $post['image_post'];
-                        ?>
-                        <img class="bd-placeholder-img" src="<?= $file ?>" width="200" height="250" role="img"
-                             aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#55595c"/>
-                        <text x="50%" y="50%" fill="#eceeef"
+                        <div class="col-auto d-none d-lg-block">
+                            <?php $file = "./../storage/" . $post['image_post'];
+                            ?>
+                            <img class="bd-placeholder-img" src="<?= $file ?>" width="200" height="250" role="img"
+                                 aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                                 focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c"/>
+                            <text x="50%" y="50%" fill="#eceeef"
+                        </div>
+
                     </div>
 
                 </div>
-
             </div>
-        </div>
         <?php endforeach;
         ?>
+        </div>
+    </div>
 
-    </main>
-
-    <footer class="blog-footer">
-        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
-                    href="https://twitter.com/mdo">@mdo</a>.
-        </p>
-        <p>
-            <a href="#">Back to top</a>
-        </p>
-    </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <?php require_once __DIR__ . './../templates/footer.php'; ?>
+<div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
 </body>
 </html>

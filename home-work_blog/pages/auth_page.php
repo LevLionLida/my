@@ -3,7 +3,6 @@
 session_start();
 
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,39 +14,54 @@ session_start();
     <title>Auth</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../style/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../style/signin.css" rel="stylesheet">
 </head>
 
 <body class="text-center">
-<?php require __DIR__ . './../templates/alerts.php'; ?>
-<main class="form-signin w-100 m-auto">
-    <form action="./../controllers/auth-controller.php" method="post">
-        <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-        <h1 class="h3 mb-3 fw-normal">Пожалуйста войдите</h1>
+<div class="container">
+    <div class="row">
+        <?php require __DIR__ . './../templates/alerts.php'; ?>
+    </div>
 
-        <div class="form-floating">
-            <input type="email" name="email" id="email" class="form-control" placeholder="name@example.com">
-            <label for="email">Адрес электронной почты</label>
+    <?php
+    if ((isset($_COOKIE['auth'])) and (isset($_SESSION['auth']))) { ?>
+
+        <?php   header('Location: ../pages/account_page.php'); ?>
+
+        <?php
+    } else { ?>
+        <div class="row">
+            <main class="form-signin w-100 m-auto">
+                <form action="./../controllers/auth-controller.php" method="post">
+                    <img class="mb-4" src="../style/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+                    <h1 class="h3 mb-3 fw-normal">Пожалуйста войдите</h1>
+
+                    <div class="form-floating">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="name@example.com">
+                        <label for="email">Адрес электронной почты</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" name="password" id="password" class="form-control"
+                               placeholder="Password">
+                        <label for="password">Пароль</label>
+                    </div>
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Запомнить меня
+                        </label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-secondary" type="submit">Войти</button>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+                </form>
+            </main>
         </div>
-        <div class="form-floating">
-            <input type="password" name="password" id="password" class="form-control"  placeholder="Password">
-            <label for="password">Пароль</label>
-        </div>
+    <?php }
+    ?>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Запомнить меня
-            </label>
-        </div>
-        <button class="w-100 btn btn-lg btn-secondary" type="submit">Войти</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
-    </form>
-</main>
-
-</form>
-
+</div>
 </body>
 </html>

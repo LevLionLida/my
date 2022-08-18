@@ -13,11 +13,7 @@ session_start();
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
     <title> Signin Template · Bootstrap v5.2</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
-
-
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../style/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -72,7 +68,6 @@ session_start();
         }
     </style>
 
-
     <!-- Custom styles for this template -->
     <link href="../style/signin.css" rel="stylesheet">
 </head>
@@ -80,7 +75,7 @@ session_start();
 
 <main class="form-signin w-100 m-auto">
     <form action="./../controllers/registration-controller.php" method="post">
-        <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <img class="mb-4" src="../style/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal">Пожалуйста зарегистрируйтесь</h1>
 
         <div class="form-floating">
@@ -88,12 +83,12 @@ session_start();
             <label for="email">Адрес электронной почты</label>
         </div>
         <div class="form-floating">
-            <input type="password" name="password" id="password" class="form-control"  placeholder="Password">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
             <label for="password">Пароль</label>
         </div>
 
         <div class="form-floating">
-            <input  type="name" name="name" id="name" class="form-control" placeholder="text">
+            <input type="name" name="name" id="name" class="form-control" placeholder="text">
             <label for="name">ФИО</label>
         </div>
         <div class="checkbox mb-3">

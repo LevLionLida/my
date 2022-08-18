@@ -1,28 +1,15 @@
-<?php ?>
 
-
-<!doctype html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.101.0">
-    <title>Blog </title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/blog/">
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-
-    <link href="../style/blog.css" rel="stylesheet">
-</head>
-<div class="container">
 <header class="blog-header lh-1 py-3">
 
     <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-4 pt-1">
-            <a class="link-secondary" href="./../pages/auth_page.php">Вход</a>
+        <div class="col-1 pt-1">
+            <a class="link-dark" href="./../pages/auth_page.php">Вход</a>
+        </div>
+        <div class="col-1 pt-1">
+            <a class="link-dark" href="./../pages/account_page.php">Кабинет</a>
+        </div>
+        <div class="col-2 pt-1">
+            <a class="link-dark" href="../functions/logout.php">Выход</a>
         </div>
         <div class="col-4 text-center">
             <a class="blog-header-logo text-dark" href="#">Large</a>
@@ -55,6 +42,8 @@
             <a class="p-2 link-secondary" href="./../pages/index.php">История</a>
         </nav>
     </div>
-    </div>
 </header>
-</div>
+
+
+
+
