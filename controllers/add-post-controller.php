@@ -19,7 +19,7 @@ if (null === $name || null === $image || null === $text) {
 }
 
 $uploadFilePath = $_FILES['image']['name'];
-$uploadFileLocalPath = dirname(__DIR__). '/storage/'. $_FILES['image'] ['name'];
+$uploadFileLocalPath = dirname(__DIR__) . '/storage/' . $_FILES['image'] ['name'];
 
 move_uploaded_file($_FILES['image']['tmp_name'], $uploadFilePath);
 

@@ -35,7 +35,7 @@ session_start();
     } else { ?>
         <div class="row">
             <main class="form-signin w-100 m-auto">
-                <form action="./../controllers/auth-controller.php" method="post">
+                <form action="../controllersuth-controller.php" method="post">
                     <img class="mb-4" src="../style/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
                     <h1 class="h3 mb-3 fw-normal">Пожалуйста войдите</h1>
 

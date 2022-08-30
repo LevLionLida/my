@@ -74,7 +74,7 @@ session_start();
 <body class="text-center">
 
 <main class="form-signin w-100 m-auto">
-    <form action="./../controllers/registration-controller.php" method="post">
+    <form action="../controllersegistration-controller.php" method="post">
         <img class="mb-4" src="../style/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal">Пожалуйста зарегистрируйтесь</h1>
 

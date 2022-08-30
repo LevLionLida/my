@@ -61,7 +61,7 @@ if (!isset($_SESSION['user_id'])) {
         } else {
             echo "Нажмите для входа"; ?>
                 <div class="col">
-            <a  class=" btn btn-secondary" href='auth_page.php' role="button "  >Вход </a>
+            <a class=" btn btn-secondary" href='auth_page.php' role="button "  >Вход </a>
 
                 </div>
             <?php

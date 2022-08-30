@@ -3,10 +3,10 @@
 
     <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col-1 pt-1">
-            <a class="link-dark" href="./../pages/auth_page.php">Вход</a>
+            <a class="link-dark" href="../pagesuth_page.php">Вход</a>
         </div>
         <div class="col-1 pt-1">
-            <a class="link-dark" href="./../pages/account_page.php">Кабинет</a>
+            <a class="link-dark" href="../pagesccount_page.php">Кабинет</a>
         </div>
         <div class="col-2 pt-1">
             <a class="link-dark" href="../functions/logout.php">Выход</a>
@@ -39,7 +39,7 @@
             <a class="p-2 link-secondary" href="#">Наука</a>
             <a class="p-2 link-secondary" href="#">Здоровье</a>
             <a class="p-2 link-secondary" href="#">Стиль</a>
-            <a class="p-2 link-secondary" href="./../pages/index.php">История</a>
+            <a class="p-2 link-secondary" href="../pagesndex.php">История</a>
         </nav>
     </div>
 </header>
