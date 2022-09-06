@@ -3,7 +3,7 @@ require 'database.php';
 $email=$_SESSION['email'];
 function user_select_id ( $email)
 {
-    $database = get_database_connection();
+    $database = DataBase::pdo();
     $user_duplicate = 'SELECT * FROM `user` WHERE `email`=:email ';// сравниваем емаил введенный пользователем на наличие копий в базе
     $stat_duplicate = $database->prepare($user_duplicate);
     $stat_duplicate->execute(['email' => $email]);

@@ -1,6 +1,10 @@
 <?php session_start();
 
-
+spl_autoload_register(
+    function($class) {
+        include $_SERVER['DOCUMENT_ROOT'] . '/' . str_replace('\\', '/', $class) . '.php';
+    }
+);
 //require_once __DIR__ . './../functions/template.php';
 require_once __DIR__ . './../functions/posts_function.php';//подключаем функцию выборки постов
 

@@ -35,8 +35,7 @@ if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-$database= get_database_connection();
-
+$database= DataBase::pdo();
 // функция проверки дублей и добавления в базу пользователя
 $user_register = user_register($database, $data);
 var_dump($user_register);

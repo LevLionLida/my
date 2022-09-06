@@ -23,7 +23,7 @@ $uploadFileLocalPath = dirname(__DIR__) . '/storage/' . $_FILES['image'] ['name'
 
 move_uploaded_file($_FILES['image']['tmp_name'], $uploadFilePath);
 
-$connection = get_database_connection();
+$connection = DataBase::pdo();
 
 $statement = $connection->prepare(
     'INSERT INTO `post` (`user_id`,`type`, `name_post`, `image_post`, `text_post`)

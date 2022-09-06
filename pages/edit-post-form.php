@@ -2,6 +2,11 @@
 
 session_start();
 
+spl_autoload_register(
+    function($class) {
+        include $_SERVER['DOCUMENT_ROOT'] . '/' . str_replace('\\', '/', $class) . '.php';
+    }
+);
 require_once './../functions/posts_function.php';
 
 $post_id = $_GET['id'];

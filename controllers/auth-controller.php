@@ -26,8 +26,7 @@ if (!isset($_POST['email']) || !isset($_POST['password'])) {
  $password = md5(trim($_POST['password']));
 // 3. Сравниваем данные пользователя добавляем, добавляем сессию в файле /../functions/auth_page.php';
 
-$database= get_database_connection();
-
+$database= DataBase::pdo();
 $user_auth = user_auth($database, $email, $password);
 
 $user_is_auth = user_is_auht();

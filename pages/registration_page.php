@@ -1,6 +1,11 @@
 <?php
-
 session_start();
+
+spl_autoload_register(
+    function($class) {
+        include $_SERVER['DOCUMENT_ROOT'] . '/' . str_replace('\\', '/', $class) . '.php';
+    }
+);
 
 ?>
 
